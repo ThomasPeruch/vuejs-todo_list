@@ -21,7 +21,11 @@
                 <h3>Lista de Tarefas</h3>
 
                 <div class="all-todos" v-for="_task in tasks">
-                    <div class="single-todo" :class="{done : _task.is_done}">
+                    <div 
+                        class="single-todo" 
+                        :class="{done : _task.is_done}" 
+                        @click="_task.is_done = !_task.is_done"
+                    >
                         <p>{{_task.task_name}}</p>
                     </div>
                 </div>
