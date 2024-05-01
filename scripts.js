@@ -1,9 +1,7 @@
-var all_tasks = []
-
 const todosApp = {
     data() {
         return {
-            tasks : window.all_tasks,
+            tasks :[],
             task :{
                 is_done : false
             }

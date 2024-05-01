@@ -29,7 +29,11 @@
                         <p>{{_task.task_name}}</p>
                     </div>
                 </div>
-                <button class="clear">Limpar tudo</button>
+                <button 
+                    class="clear" 
+                    @click="tasks=[]"
+                    v-if="tasks.length"
+                >Limpar tudo</button>
 
                 <input type="text" placeholder="Escreva uma nova tarefa..." v-model="task.task_name">
                 <button class="add" @click="add_task()">Adicionar</button>
