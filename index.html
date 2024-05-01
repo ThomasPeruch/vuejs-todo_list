@@ -19,24 +19,16 @@
                 
                 
                 <h3>Lista de Tarefas</h3>
-                
-                <div class="all-todos">
-                    <div class="single-todo done">
-                        <p>Aprender HTML, CSS e Javascript</p>
-                    </div>
-                    <div class="single-todo done">
-                        <p>Aprender o básico de Vue JS</p>
-                    </div>
-                    <div class="single-todo">
-                        <p>Completar o desafio de Vue JS com excelência</p>
-                    </div>
 
+                <div class="all-todos" v-for="_task in tasks">
+                    <div class="single-todo" :class="{done : _task.is_done}">
+                        <p>{{_task.task_name}}</p>
+                    </div>
                 </div>
-
                 <button class="clear">Limpar tudo</button>
 
-                <input type="text" placeholder="Escreva uma nova tarefa...">
-                <button class="add">Adicionar</button>
+                <input type="text" placeholder="Escreva uma nova tarefa..." v-model="task.task_name">
+                <button class="add" @click="add_task()">Adicionar</button>
 
                 <div class="instructions">
                     Instruções:
@@ -49,7 +41,7 @@
             </section>
 
         </main>
-        <script src="https://unpkg.com/vue@next"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="scripts.js"></script>
     </body>
 
