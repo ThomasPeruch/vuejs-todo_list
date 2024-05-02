@@ -26,6 +26,9 @@ const todosApp = {
         if(localStorage.getItem("tasks")){
             this.tasks = JSON.parse(localStorage.getItem("tasks")) 
         }
+    },
+    updated() {
+        localStorage.setItem("tasks", JSON.stringify(this.tasks))
     }
 };
 
