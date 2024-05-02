@@ -14,11 +14,17 @@ const todosApp = {
                 this.task = {
                     is_done : false
                 }
+                localStorage.setItem("tasks", JSON.stringify(this.tasks))
             }
             else{
                 alert("Preencha com uma nova tarefa")
             }
 
+        }
+    },
+    created() {
+        if(localStorage.getItem("tasks")){
+            this.tasks = JSON.parse(localStorage.getItem("tasks")) 
         }
     }
 };
